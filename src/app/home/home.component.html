@@ -1,0 +1,57 @@
+<div  [ngClass]="{ 'dark': isDarkMode }" [ngStyle]="{ 'background': isDarkMode ? 'linear-gradient(to right, #1a1a2e, #000000)' : 'linear-gradient(to right, #ffffff, #e6e6e6)' }" class="transition-colors duration-500 w-full min-h-screen flex flex-col overflow-x-hidden">
+    <nav [ngClass]="{ 'bg-black text-white shadow-violet-800': isDarkMode, 'bg-[#EDEDED] text-black shadow-gray-400': !isDarkMode }" class="flex justify-between items-center p-4 shadow-md transition-all duration-500 flex-wrap">
+        <div class="flex items-center w-full sm:w-auto justify-between sm:justify-start">
+            <img src="assets/Logo.png" class="logo w-32 sm:w-44 mb-2 sm:mb-3">
+            <h1 class="text-[clamp(1.5rem,4vw,3rem)] font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-500 tracking-wide uppercase">
+                ChatterNow
+            </h1>
+        </div>
+
+        <div class="flex items-center justify-center gap-4 p-4">
+            <p class="text-gray-700 dark:text-gray-300 font-medium">Modo Claro</p>
+            <div (click)="toggleTheme()" [ngClass]="{ 'bg-blue-500': isDarkMode }" class="relative flex items-center cursor-pointer h-6 w-14 rounded-full p-1 ring-1 ring-inset ring-gray-300 bg-slate-900/5 transition duration-200 ease-in-out">              
+                <div [ngClass]="{ 'translate-x-7': isDarkMode, 'translate-x-0': !isDarkMode }" class="absolute left-1 h-4 w-4 rounded-full bg-white shadow-xs ring-1 ring-gray-500 transition duration-200 ease-in-out"></div>
+            </div> 
+            <p class="text-gray-700 dark:text-gray-300 font-medium">Modo Oscuro</p>
+        </div>
+
+        <div class="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-4">
+            <button routerLink="/register" [ngClass]="{ 'border-blue-500 text-blue-400 hover:shadow-blue-600 hover:shadow-lg': isDarkMode, 'border-purple-500 text-purple-700 hover:shadow-purple-500 hover:shadow-md': !isDarkMode }" class="px-6 py-2 rounded-lg transition-all duration-500">
+                Sign up
+            </button>
+            <button routerLink="/login" [ngClass]="{ 'bg-blue-500 text-white hover:shadow-blue-600 hover:shadow-lg': isDarkMode, 'bg-purple-500 text-white hover:shadow-purple-500 hover:shadow-md': !isDarkMode }" class="px-6 py-2 rounded-lg transition-all duration-500">
+                Login
+            </button>
+        </div>
+    </nav>
+
+    <div class="flex flex-col-reverse md:flex-row-reverse items-center justify-between px-6 sm:px-10 md:px-20 py-10 md:py-16">
+        <div class="flex flex-col md:flex-row items-center gap-12">
+            <div class="relative w-full md:w-[600px] h-[400px]">
+                <img src="assets/Image1.png" alt="Imagen 1" class="absolute top-0 left-0 w-3/4 md:w-1/2 max-w-xl z-10">
+                <img src="assets/Image2.png" alt="Imagen 2" class="absolute top-10 right-0 w-3/4 md:w-1/2 max-w-xl z-20">       
+                <img src="assets/Image3.png" alt="Imagen 3" class="absolute bottom-0 left-10 w-3/4 md:w-1/2 max-w-xl z-30">      
+            </div>
+        </div>
+
+        <div class="text-left max-w-lg px-6 sm:px-10 md:px-20 py-10">
+            <h1 class="text-[clamp(1.5rem,5vw,3rem)] font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-500 tracking-wide uppercase">
+                Send private messages
+            </h1>
+            <p [ngClass]="{ 'text-gray-400': isDarkMode, 'text-black': !isDarkMode }" class="mt-4 text-lg">
+                Free messages and calls in a simple, reliable and private way, available worldwide.
+            </p>
+            <div class="mt-6 flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-4">
+                <button routerLink="/login" [ngClass]="{ 'bg-blue-500 text-white hover:shadow-blue-600 hover:shadow-lg': isDarkMode, 'bg-purple-500 text-white hover:shadow-purple-500 hover:shadow-md': !isDarkMode }" class="px-6 py-2 rounded-lg transition-all duration-500">
+                    Login
+                </button>
+                <button routerLink="/register" [ngClass]="{ 'border-blue-500 text-blue-400 hover:shadow-blue-600 hover:shadow-lg': isDarkMode, 'border-purple-500 text-purple-700 hover:shadow-purple-500 hover:shadow-md': !isDarkMode }" class="px-6 py-2 rounded-lg transition-all duration-500">
+                    Sign up
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<router-outlet></router-outlet>

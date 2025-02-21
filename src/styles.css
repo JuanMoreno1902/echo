@@ -1,0 +1,81 @@
+/*Importa las bases de Tailwind, los componentes y las utilidades*/
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*Definición de una animación de entrada con desvanecimiento (fade-in)*/
+@keyframes fade-in {
+    from {
+      opacity: 0; /*Comienza completamente invisible*/
+      transform: translateY(-10px); /*Se desplaza ligeramente hacia arriba*/
+    }
+    to {
+      opacity: 1; /*Se hace completamente visible*/
+      transform: translateY(0); /*Regresa a su posición normal*/
+    }
+}
+
+/*Clase para aplicar la animación de fade-in*/
+.animate-fade-in {
+    animation: fade-in 0.3s ease-out; /*Se ejecuta en 0.3s con una salida suave*/
+}
+
+/*Estilo para los campos de entrada de texto*/
+.input-field {
+    @apply p-3 mb-3 border border-gray-600 rounded-lg bg-gray-800 text-gray-200 
+           focus:outline-none focus:ring-2 focus:ring-blue-500 transition;
+}
+
+/*Botón principal con estilos predeterminados y efectos al pasar el cursor*/
+.btn-primary {
+    @apply bg-blue-500 text-white p-3 rounded-lg font-bold cursor-pointer transition-all 
+           hover:bg-blue-600 hover:shadow-lg hover:shadow-blue-500/50;
+}
+
+/*Estilo para un botón deshabilitado*/
+.btn-primary:disabled {
+    @apply bg-indigo-600 cursor-not-allowed;
+}
+
+/*Botón para iniciar sesión con Facebook*/
+.btn-fb {
+    @apply bg-indigo-400 text-white p-3 w-full rounded-lg font-bold mt-3 cursor-pointer 
+           transition-all hover:bg-indigo-800 hover:shadow-lg hover:shadow-indigo-700;
+}
+
+/*Estilo para el enlace de "¿Olvidaste tu contraseña?"*/
+.forgot-password {
+    @apply mt-3 text-blue-400 text-sm hover:underline transition-all;
+}
+
+/*Caja de registro con diseño flexible y bordes redondeados*/
+.signup-box {
+    @apply mt-4 p-3 flex justify-center items-center border border-gray-700 w-80 
+           bg-gray-900 rounded-lg shadow-sm text-sm;
+}
+
+/*Reaplicación de estilos en .input-field con más detalles*/
+.input-field {
+    @apply w-full px-4 py-2 mb-3 rounded-lg border outline-none transition-all duration-500;
+}
+
+/*Reaplicación de estilos en .btn-primary con más detalles*/
+.btn-primary {
+    @apply w-full bg-blue-600 hover:bg-blue-500 text-white font-semibold py-2 
+           rounded-lg transition-all duration-500;
+}
+
+/*Estilo para el botón de cambio de tema*/
+.theme-switcher {
+    @apply px-5 py-2 mt-4 text-lg font-semibold rounded-lg transition-all duration-500;
+    background: linear-gradient(90deg, #4f46e5, #9333ea); /* Degradado de color morado*/
+    color: white;
+    box-shadow: 0 0 15px rgba(147, 51, 234, 0.5); /* Sombra morada difusa*/
+}
+
+/*Efecto hover para el botón de cambio de tema */
+.theme-switcher:hover {
+    box-shadow: 0 0 25px rgba(147, 51, 234, 0.8); /* Aumenta la intensidad de la sombra*/
+}
+
+

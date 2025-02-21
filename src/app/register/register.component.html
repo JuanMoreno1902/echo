@@ -1,0 +1,57 @@
+<div [ngClass]="{ 'dark': isDarkMode }" [ngStyle]="{ 'background': isDarkMode ? 'linear-gradient(to right, #1a1a2e, #000000)' : 'linear-gradient(to right, #ffffff, #e6e6e6)' }" class="transition-colors duration-500 w-full h-screen flex justify-center items-center px-6 overflow-auto">
+    <div [ngClass]="{ 'opacity-100 scale-100': showAlert, 'opacity-0 scale-95': !showAlert }" class="fixed top-5 flex items-center gap-3 bg-red-500 text-white px-4 py-3 rounded-lg shadow-md transition-all duration-500 transform">
+        <a>
+            Invalid email or password. Please try again. (Please note that the password must be at least 8 characters long, including uppercase, lowercase, numbers and special characters.)
+        </a>
+    </div>
+
+    <div class="flex flex-col md:flex-row items-center gap-12">
+
+        <div class="flex flex-col items-center">
+            <img class="w-48 md:w-52 mb-3 max-w-full" src="assets/Logo.png">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-500 tracking-wide uppercase">
+                ChatterNow
+            </h1>
+        </div>
+        
+        <div [ngClass]="{ 'bg-black border-gray-700 shadow-violet-800': isDarkMode, 'bg-white border-gray-300 shadow-gray-400': !isDarkMode }" class="login-box p-6 w-96 flex flex-col items-center rounded-2xl shadow-lg transition-all duration-500">
+            <form (ngSubmit)="onRegister()" [formGroup]="loginForm" class="w-full flex flex-col">
+                <input formControlName="first_name" type="first_name" placeholder="First Name" class="input-field">
+                <input formControlName="last_name" type="last_name" placeholder="Last Name" class="input-field" >
+                <input formControlName="email" type="email" placeholder="Email" class="input-field">
+                <input formControlName="password" type="password" placeholder="Password" class="input-field">
+                <button type="submit" [ngClass]="{ 'border-blue-500 text-blue-400 hover:shadow-blue-600 hover:shadow-lg': isDarkMode, 'border-purple-500 text-purple-700 hover:shadow-purple-500 hover:shadow-md': !isDarkMode }" class="px-6 py-2 rounded-lg transition-all duration-500 w-full">
+                    Register
+                </button>
+            </form>
+
+            <div  [ngClass]="{ 'text-gray-400': isDarkMode, 'text-gray-600': !isDarkMode }" class="separator flex items-center w-full my-4 font-semibold">
+                <span [ngClass]="{ 'border-gray-600': isDarkMode, 'border-gray-400': !isDarkMode }" class="flex-1 border-b"></span>
+                <span class="px-2">O</span>
+                <span [ngClass]="{ 'border-gray-600': isDarkMode, 'border-gray-400': !isDarkMode }" class="flex-1 border-b"></span>
+            </div>
+
+            <div class="signup-box">
+                <p [ngClass]="{ 'text-gray-300': isDarkMode, 'text-gray-400': !isDarkMode }" class="m-1" >
+                    Already have an account?
+                </p>
+                <a routerLink="/login" [ngClass]="{ 'text-blue-400': isDarkMode, 'text-purple-700': !isDarkMode }" class="font-semibold hover:underline" >
+                    Login
+                </a>
+            </div>
+
+            <div class="flex flex-col items-center w-full my-4">
+                <div (click)="toggleTheme()" [ngClass]="{ 'bg-blue-500': isDarkMode }" class="relative flex items-center cursor-pointer h-6 w-14 rounded-full p-1 ring-1 ring-inset ring-gray-300 bg-slate-900/5 transition duration-200 ease-in-out">
+                    <div [ngClass]="{ 'translate-x-7': isDarkMode, 'translate-x-0': !isDarkMode }" class="absolute left-1 h-4 w-4 rounded-full bg-white shadow-xs ring-1 ring-slate-700/10 transition duration-200 ease-in-out"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<router-outlet></router-outlet>
+

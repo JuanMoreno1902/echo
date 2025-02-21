@@ -1,0 +1,85 @@
+<div [ngClass]="{ 'dark': isDarkMode }" class="flex flex-col md:flex-row h-screen transition-colors duration-500 ease-in-out">
+    <div [ngClass]="isDarkMode ? 'from-gray-900 via-gray-800 to-gray-700 text-white' : 'from-gray-100 via-gray-200 to-gray-300 text-gray-900'" class="w-full md:w-1/3 p-4 overflow-y-auto shadow-lg bg-gradient-to-b transition-colors duration-500 ease-in-out">
+        <div class="flex items-center space-x-3 mb-4">
+            <img src="assets/Logo.png" alt="Chatternow Logo" class="w-12 h-auto"/>
+            <h1 [ngClass]="isDarkMode ? 'from-purple-400 to-blue-500' : 'from-blue-500 to-purple-400'" class="text-2xl md:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r uppercase">
+                Chatternow
+            </h1>
+        </div>
+
+        <div class="flex items-center justify-center gap-4 p-4">
+            <p class="text-gray-700 dark:text-gray-300 font-medium">Modo Claro</p>
+            <div (click)="toggleTheme()" [ngClass]="{ 'bg-blue-500': isDarkMode }" class="relative flex items-center cursor-pointer h-6 w-14 rounded-full p-1 ring-1 ring-inset ring-gray-300 bg-slate-900/5 transition duration-200 ease-in-out">              
+                <div [ngClass]="{ 'translate-x-7': isDarkMode, 'translate-x-0': !isDarkMode }" class="absolute left-1 h-4 w-4 rounded-full bg-white shadow-xs ring-1 ring-gray-500 transition duration-200 ease-in-out"></div>
+            </div> 
+            <p class="text-gray-700 dark:text-gray-300 font-medium">Modo Oscuro</p>
+        </div>
+
+        <button routerLink="/home" [ngClass]="{ 'bg-blue-500 text-white hover:shadow-blue-600 hover:shadow-lg': isDarkMode, 'bg-purple-500 text-white hover:shadow-purple-500 hover:shadow-md': !isDarkMode }" class="px-4 py-2 rounded-lg transition-all duration-500 ease-in-out w-full">
+            Sign out
+        </button>
+        <button (click)="addChat()" [ngClass]="{ 'bg-blue-500 text-white hover:shadow-blue-600 hover:shadow-lg': isDarkMode, 'bg-purple-500 text-white hover:shadow-purple-500 hover:shadow-md': !isDarkMode }" class="w-full mt-4 px-4 py-2 duration-500 rounded-lg">
+            Add chat
+        </button>
+        <ul>
+            <li (click)="selectChat(chat)" *ngFor="let chat of chats" [ngClass]="isDarkMode ? 'border-gray-700 hover:bg-gray-700' : 'border-gray-300 hover:bg-gray-200'" class="p-3 border-b cursor-pointer transition-all duration-500 ease-in-out">
+                <div class="font-semibold">
+                    Chat con: {{ chat.otherUserName }}
+                </div>
+                <div [ngClass]="isDarkMode ? 'text-gray-400' : 'text-gray-600'" class="text-sm">
+                    {{ chat.lastMessage }}
+                </div>
+                <div [ngClass]="isDarkMode ? 'text-gray-500' : 'text-gray-700'" class="text-xs">
+                    {{ chat.time }}
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <div [ngClass]="isDarkMode ? 'from-gray-900 via-gray-800 to-gray-700 text-white' : 'from-gray-100 via-gray-200 to-gray-300 text-gray-900'" class="w-full md:w-2/3 flex flex-col h-full max-h-screen bg-gradient-to-b transition-colors duration-500 ease-in-out">
+        <div *ngIf="selectedChat" class="flex flex-col flex-grow p-4 max-h-screen overflow-hidden">
+            <h2 [ngClass]="isDarkMode ? 'from-purple-400 to-blue-500' : 'from-blue-500 to-purple-400'" class="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r">
+                {{ selectedChat.name }}
+            </h2>
+            <div class="flex-grow flex flex-col space-y-2 p-4 overflow-y-auto max-h-[65vh]">
+                <div *ngFor="let message of messages" [ngClass]="message.senderId || message.sender_id === userId ? 'self-end bg-blue-500 text-white' : 'self-start bg-gray-300 text-black'" class="p-2 rounded-lg max-w-xs">
+                    <p>
+                        {{ message.content }}
+                    </p>
+                    <img *ngIf="message.imageUrl || message.image_url" [src]="message.imageUrl || message.image_url" alt="Imagen del mensaje" class="mt-2 max-w-full h-auto rounded-lg shadow-md">
+                </div>
+            </div>
+
+            <div class="flex flex-wrap items-center p-4 border-t gap-2 sm:space-x-2">
+                <input [(ngModel)]="newMessage" (keyup.enter)="sendMessage()" type="text" placeholder="Type a message..." class="flex-grow p-2 rounded-lg border border-gray-300 bg-white text-black w-full sm:w-auto">
+                <input type="file" #fileInput (change)="onFileSelected($event)" accept="image/*" hidden>
+                <button (click)="fileInput.click()"  class="px-4 py-2 rounded-lg text-white bg-gray-500 hover:shadow-gray-600 hover:shadow-lg duration-500">
+                    📷 Attach Image
+                </button>
+                <div *ngIf="imagePreview" class="flex items-center gap-2 max-w-xs overflow-hidden">
+                    <div class="flex flex-col items-center">
+                        <p class="text-sm text-gray-400">
+                            Selected image:
+                        </p>
+                        <img [src]="imagePreview" alt="Vista previa" class="w-20 h-20 rounded-lg shadow-md object-cover">
+                    </div>
+                    <button (click)="removeImage()" class="text-red-500 text-lg font-bold">
+                        ❌
+                    </button>
+                </div>
+                <button (click)="sendMessage()" [ngClass]="{ 'bg-blue-500 text-white hover:shadow-blue-600 hover:shadow-lg': isDarkMode, 'bg-purple-500 text-white hover:shadow-purple-500 hover:shadow-md': !isDarkMode }" class="px-4 py-2 rounded-lg w-full duration-500 sm:w-auto">
+                    Send
+                </button>
+            </div>
+        </div>
+
+        <div *ngIf="!selectedChat" class="flex flex-grow items-center justify-center h-full text-gray-600">
+            Select a chat to start the conversation
+        </div>
+    </div>
+</div>
+
+
+  
+
+<router-outlet></router-outlet>

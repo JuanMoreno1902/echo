@@ -23,13 +23,13 @@ Esta plataforma está enfocada en la seguridad y privacidad de los usuarios, imp
 ![Pantalla de Inicio en Modo Oscuro](src/assets/UI_Home_dark.png)  
 *La misma pantalla de inicio de Echo pero en modo oscuro, ofreciendo una experiencia visual cómoda para entornos con poca luz.*  
 
-### Pantalla de Bienvenida (Modo Claro)  
-![Pantalla de Bienvenida en Modo Claro](src/assets/UI_Init_bright.png)  
-*Vista inicial de la aplicación en modo claro, con una interfaz intuitiva que invita al usuario a explorar Echo.*  
+### Pantalla de Registro (Modo Claro)  
+![Pantalla de Registro en Modo Claro](src/assets/UI_Register_bright.png)  
+*Interfaz de registro en modo claro, con un diseño sencillo y optimizado para facilitar la creación de cuentas.*  
 
-### Pantalla de Bienvenida (Modo Oscuro)  
-![Pantalla de Bienvenida en Modo Oscuro](src/assets/UI_Init_dark.png)  
-*Modo oscuro de la pantalla de bienvenida, proporcionando una alternativa elegante y agradable a la vista.*  
+### Pantalla de Registro (Modo Oscuro)  
+![Pantalla de Registro en Modo Oscuro](src/assets/UI_Register_dark.png)  
+*Modo oscuro de la pantalla de registro, manteniendo una estética atractiva y funcional para los nuevos usuarios.*  
 
 ### Pantalla de Inicio de Sesión (Modo Claro)  
 ![Pantalla de Inicio de Sesión en Modo Claro](src/assets/UI_Login_bright.png)  
@@ -39,15 +39,13 @@ Esta plataforma está enfocada en la seguridad y privacidad de los usuarios, imp
 ![Pantalla de Inicio de Sesión en Modo Oscuro](src/assets/UI_Login_dark.png)  
 *Versión en modo oscuro de la pantalla de inicio de sesión, ideal para quienes prefieren una interfaz menos brillante.*  
 
-### Pantalla de Registro (Modo Claro)  
-![Pantalla de Registro en Modo Claro](src/assets/UI_Register_bright.png)  
-*Interfaz de registro en modo claro, con un diseño sencillo y optimizado para facilitar la creación de cuentas.*  
+### Pantalla de Bienvenida (Modo Claro)  
+![Pantalla de Bienvenida en Modo Claro](src/assets/UI_Init_bright.png)  
+*Vista inicial de la aplicación en modo claro, con una interfaz intuitiva que invita al usuario a explorar Echo.*  
 
-### Pantalla de Registro (Modo Oscuro)  
-![Pantalla de Registro en Modo Oscuro](src/assets/UI_Register_dark.png)  
-*Modo oscuro de la pantalla de registro, manteniendo una estética atractiva y funcional para los nuevos usuarios.*  
-
-
+### Pantalla de Bienvenida (Modo Oscuro)  
+![Pantalla de Bienvenida en Modo Oscuro](src/assets/UI_Init_dark.png)  
+*Modo oscuro de la pantalla de bienvenida, proporcionando una alternativa elegante y agradable a la vista.*  
 
 ## Instalación y Configuración
 

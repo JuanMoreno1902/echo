@@ -1,4 +1,4 @@
-# 📱 Echo - Chat App
+# Echo - Chat App
 
 Echo es una aplicación de mensajería instantánea moderna y eficiente, diseñada para ofrecer una experiencia de comunicación fluida y segura. Inspirada en plataformas populares como WhatsApp, Echo permite a los usuarios enviar y recibir mensajes en tiempo real, compartir archivos multimedia y participar en chats privados.
 
@@ -6,16 +6,14 @@ Construida con Angular para una interfaz rápida y responsiva, y Supabase como b
 
 Esta plataforma está enfocada en la seguridad y privacidad de los usuarios, implementando reglas de acceso mediante Row Level Security (RLS) para garantizar que cada usuario solo tenga acceso a sus propias conversaciones. Ya sea para comunicación personal o en el entorno empresarial, Echo es una solución confiable, escalable y fácil de usar.
 
-## 🚀 Características
+## Características
 
 ✅ Autenticación con Supabase.
 ✅ Envío y recepción de mensajes en tiempo real.
-✅ Almacenamiento de imágenes y archivos. 
+✅ Almacenamiento de imágenes. 
 ✅ Chats privados.
 
-## 🎨 Captura de Pantalla
-
-## 🌟 Capturas de Pantalla  
+## Visualización de interfaces 
 
 ### Pantalla de Inicio (Modo Claro)  
 ![Pantalla de Inicio en Modo Claro](src/assets/UI_Home_bright.png)  
@@ -51,7 +49,7 @@ Esta plataforma está enfocada en la seguridad y privacidad de los usuarios, imp
 
 
 
-## 🔧 Instalación y Configuración
+## Instalación y Configuración
 
 1. Clonar el repositorio de GitHub:  
    ```sh

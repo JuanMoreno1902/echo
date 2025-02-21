@@ -94,7 +94,7 @@ Esta plataforma está enfocada en la seguridad y privacidad de los usuarios, imp
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Supabase Realtime** para comunicación en tiempo real sin necesidad de configurar WebSockets manualmente.  
 
 **Despliegue:**  
-&nbsp;&nbsp;&nbsp;🌍 *Vercel* para un hosting rápido, seguro y optimizado para Angular.  
+&nbsp;&nbsp;&nbsp; *Vercel* para un hosting rápido, seguro y optimizado para Angular.  
 
 ---
 
